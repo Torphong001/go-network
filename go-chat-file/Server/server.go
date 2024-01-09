@@ -40,8 +40,8 @@ func handleConnection(conn net.Conn) {
 				fmt.Println("Transfer Complete")
 			} else {
 				fmt.Println(err)
-				return
 			}
+			return
 		}
 		//write data from buffer to file
 		file.Write(buffer[:n])
@@ -50,7 +50,7 @@ func handleConnection(conn net.Conn) {
 
 func main() {
 	//Create Listenner
-	listenner, err := net.Listen("tcp", ":5000")
+	listenner, err := net.Listen("tcp", "0.0.0.0:5000")
 	if err != nil {
 		fmt.Println(err)
 		return
